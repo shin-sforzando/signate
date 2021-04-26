@@ -1,7 +1,7 @@
-# broad-boilerplate
+# signate
 
 <!-- Badges -->
-[![Bump Version](https://github.com/shin-sforzando/broad-boilerplate/workflows/Bump%20Version/badge.svg)](https://github.com/shin-sforzando/broad-boilerplate/actions?query=workflow:%22Bump+Version%22)
+[![Bump Version](https://github.com/shin-sforzando/signate/workflows/Bump%20Version/badge.svg)](https://github.com/shin-sforzando/signate/actions?query=workflow:%22Bump+Version%22)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -21,7 +21,7 @@ GitHub Template Repository for General Use.
   - [Run](#run)
   - [Lint](#lint)
   - [Test](#test)
-  - [Deploy](#deploy)
+  - [Submit](#submit)
   - [Document](#document)
 - [Misc](#misc)
 - [Notes](#notes)
@@ -30,11 +30,7 @@ GitHub Template Repository for General Use.
 
 ## Prerequisites
 
-- A (Version x.y.z or higher)
-  - B
-  - C
-- D
-  - E
+- Python 3
 
 ## How to
 
@@ -61,14 +57,21 @@ help                 助言
 
 ### Setup
 
+Prepare `~/.signate/signate.json` .
+
 ```shell
-(T. B. D.)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ### Develop
 
+For example, to start ompetition No. 102,
+
 ```shell
-(T. B. D.)
+mkdir -p 102/data
+signate download --competition-id=102 --path data
 ```
 
 ### Run
@@ -89,10 +92,10 @@ help                 助言
 (T. B. D.)
 ```
 
-### Deploy
+### Submit
 
 ```shell
-(T. B. D.)
+signate submit -competition-id=102 data/submit.tsv --note="blah blah blah"
 ```
 
 ### Document
