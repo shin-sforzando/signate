@@ -7,14 +7,33 @@ assignees: ''
 
 ---
 
-## Is your feature request related to a problem? Please describe
+## Describe the desired **state** as a goal
 
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+(T. B. D.)
 
-## Describe the solution you'd like
+ex. Automated testing should be completed with just a push.
 
-A clear and concise description of what you want to happen.
+### Test code that clarifies the acceptance criteria
 
-## Additional context
+(T. B. D.)
+
+ex.
+
+```python
+assert 1 == 1
+```
+
+## What are the possible options?
+
+(T. B. D.)
+
+ex.
+
+- GitHub Action with PyTest
+- Jenkins
+
+## Appendix
+
+(T. B. D.)
 
 Add any other context or screenshots about the feature request here.

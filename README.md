@@ -1,7 +1,6 @@
 # signate
 
 <!-- Badges -->
-[![Bump Version](https://github.com/shin-sforzando/signate/workflows/Bump%20Version/badge.svg)](https://github.com/shin-sforzando/signate/actions?query=workflow:%22Bump+Version%22)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -11,7 +10,7 @@
 |Screenshot 1|Screenshot 2|
 
 <!-- Synopsis -->
-GitHub Template Repository for General Use.
+Source codes for [SIGNATE](https://signate.jp).
 
 <!-- TOC -->
 - [Prerequisites](#prerequisites)
@@ -30,7 +29,8 @@ GitHub Template Repository for General Use.
 
 ## Prerequisites
 
-- Python 3
+- Python 3.6 or higher
+  - [signate CLI](https://pypi.org/project/signate/)
 
 ## How to
 
@@ -57,17 +57,23 @@ help                 助言
 
 ### Setup
 
-Prepare `~/.signate/signate.json` .
+Prepare `~/.signate/signate.json` from [Account Settings](https://signate.jp/account_settings).
 
 ```shell
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
+```
+
+```shell
+make reveal
+mkdir ~/.signate
+cp signate.json ~/.signate/signate.json
 ```
 
 ### Develop
 
-For example, to start ompetition No. 102,
+For example, to start competition No. 102,
 
 ```shell
 mkdir -p 102/data
