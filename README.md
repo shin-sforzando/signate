@@ -1,6 +1,7 @@
 # signate
 
 <!-- Badges -->
+[![push](https://github.com/shin-sforzando/signate/actions/workflows/push.yml/badge.svg)](https://github.com/shin-sforzando/signate/actions/workflows/push.yml)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -36,39 +37,29 @@ Source codes for [SIGNATE](https://signate.jp).
 
 ```shell
 $ make help
-ps                   監視
-up                   起動
 setup                初回
-restart              再起
-renew                転生
-shell                接続
-logs                 記録
-follow               追跡
-open                 閲覧
 hide                 秘匿
 reveal               暴露
-deploy               配備
-stop                 停止
-down                 削除
+doc                  文書
 clean                掃除
-prune                破滅
 help                 助言
 ```
 
 ### Setup
 
-Prepare `~/.signate/signate.json` from [Account Settings](https://signate.jp/account_settings).
+Put the SIGNATE Token at `~/.signate/signate.json`.
+To get it, access [Account Settings](https://signate.jp/account_settings).
+
+```shell
+make setup
+```
+
+Build a virtual environment to avoid global pollution.
 
 ```shell
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-```
-
-```shell
-make reveal
-mkdir ~/.signate
-cp signate.json ~/.signate/signate.json
 ```
 
 ### Develop
@@ -77,7 +68,7 @@ For example, to start competition No. 102,
 
 ```shell
 mkdir -p 102/data
-signate download --competition-id=102 --path data
+signate download --competition-id=102 --path 102/data
 ```
 
 ### Run
