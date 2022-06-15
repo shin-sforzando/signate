@@ -330,6 +330,3 @@ Thumbs.db
 .gitsecret/keys/random_seed
 !*.secret
 signate.json
-
-# data
-**/data/*.[ct]sv

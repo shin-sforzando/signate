@@ -1,13 +1,36 @@
 # -*- coding: utf-8 -*-
 
 TIMESTAMP := $(shell date +%Y%m%d%H%M%S)
-SHELL=zsh
+MAKEFILE_DIR := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+OS_NAME := $(shell uname -s)
 
-.PHONY: setup hide reveal doc clean help
+PYTHON_COMMAND := python3
 
-setup: reveal ## 初回
+OPTS :=
+.PHONY: default setup init-% hide reveal prune help
+
+default: setup ## 常用
+
+setup: reveal install ; ## 初回
+	brew install git-cliff
+	brew install git-secret
+	brew install direnv
+	brew install lefthook
 	mkdir -p ~/.signate
 	cp signate.json ~/.signate/signate.json
+	$(PYTHON_COMMAND) -m venv venv
+	( venv/bin/activate; \
+		pip install -r requirements.txt; \
+	)
+	direnv allow
+	if [ $(OS_NAME) = "Darwin" ]; then say "The setup process is complete." ; fi
+
+join-%: ## 挑戦
+	@echo "Initializing Competition ID: ${@:join-%=%} ..."
+	mkdir -p ${@:join-%=%}/data ${@:join-%=%}/logs ${@:join-%=%}/results
+	cp -R -n _template/ ${@:join-%=%}
+	signate download --competition-id=${@:join-%=%} --path=${@:join-%=%}/data
+	if [ $(OS_NAME) = "Darwin" ]; then say "Got ready to join the competition." ; fi
 
 hide: ## 秘匿
 	git secret hide -v
@@ -15,11 +38,9 @@ hide: ## 秘匿
 reveal: ## 暴露
 	git secret reveal -v
 
-doc: ## 文書
-	echo "TODO: Not Implemented Yet!"
-
-clean: ## 掃除
-	rm -rf log/*
+prune: ## 破滅
+	$(CMD_DOCKER) system prune --all --force --volumes
+	if [ $(OS_NAME) = "Darwin" ]; then say "The pruning process is complete." ; fi
 
 help: ## 助言
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+.*:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'

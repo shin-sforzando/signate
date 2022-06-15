@@ -17,12 +17,15 @@ Source codes for [SIGNATE](https://signate.jp).
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Setup](#setup)
-  - [Develop](#develop)
-  - [Run](#run)
-  - [Lint](#lint)
-  - [Test](#test)
-  - [Submit](#submit)
-  - [Document](#document)
+  - [Competitions](#competitions)
+    - [Join](#join)
+    - [Initialize](#initialize)
+    - [Start](#start)
+    - [Format](#format)
+    - [Lint](#lint)
+    - [Test](#test)
+    - [Document](#document)
+    - [Submit](#submit)
 - [Misc](#misc)
 - [Notes](#notes)
   - [LICENSE](#license)
@@ -37,68 +40,75 @@ Source codes for [SIGNATE](https://signate.jp).
 
 ```shell
 $ make help
+default              常用
 setup                初回
+join-%               挑戦
 hide                 秘匿
 reveal               暴露
-doc                  文書
-clean                掃除
+prune                破滅
 help                 助言
 ```
 
 ### Setup
 
-Put the SIGNATE Token at `~/.signate/signate.json`.
-To get it, access [Account Settings](https://signate.jp/account_settings).
-
 ```shell
 make setup
 ```
 
-Build a virtual environment to avoid global pollution.
+To get `signate.json`, access [Account Settings](https://signate.jp/account_settings).
+
+### Competitions
+
+#### Join
+
+For example, to join competition No. 102,
 
 ```shell
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+make join-102
 ```
 
-### Develop
+Then change to the directory of the competition.
 
-For example, to start competition No. 102,
+#### Initialize
 
 ```shell
-mkdir -p 102/data
-signate download --competition-id=102 --path 102/data
+make init
 ```
 
-### Run
+#### Start
 
 ```shell
-(T. B. D.)
+make start
 ```
 
-### Lint
+#### Format
 
 ```shell
-(T. B. D.)
+make format
 ```
 
-### Test
+#### Lint
 
 ```shell
-(T. B. D.)
+make lint
 ```
 
-### Submit
+#### Test
 
 ```shell
-signate submit -competition-id=102 data/submit.tsv --note="blah blah blah"
+make test
 ```
 
-### Document
+#### Document
 
 ```shell
-(T. B. D.)
+make doc
+```
+
+#### Submit
+
+```shell
+make submit
 ```
 
 ## Misc
