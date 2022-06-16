@@ -13,7 +13,7 @@ OPEN_TARGET :=
 
 OPTS :=
 .DEFAULT_GOAL := default
-.PHONY: default init download hide reveal start open format lint test doc submit clean prune help
+.PHONY: default init download hide reveal start open format lint test submit clean prune help
 
 default: ## 常用
 
@@ -42,20 +42,16 @@ open: ## 閲覧
 	# if [ $(OS_NAME) = "Darwin" ]; then open ${OPEN_TARGET} ; fi
 
 format: ## 整形
-	echo "TODO: Not Implemented Yet!"
+	black $(OPTS) .
 	if [ $(OS_NAME) = "Darwin" ]; then say "The test process is complete." ; fi
 
 lint: ## 検証
-	echo "TODO: Not Implemented Yet!"
+	flake8 $(OPTS) .
 	if [ $(OS_NAME) = "Darwin" ]; then say "The test process is complete." ; fi
 
 test: ## 試験
 	echo "TODO: Not Implemented Yet!"
 	if [ $(OS_NAME) = "Darwin" ]; then say "The test process is complete." ; fi
-
-doc: ## 文書
-	echo "TODO: Not Implemented Yet!"
-	if [ $(OS_NAME) = "Darwin" ]; then say "The documentation process is complete." ; fi
 
 submit: ## 投稿
 	echo "TODO: Not Implemented Yet!"

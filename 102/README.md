@@ -43,7 +43,6 @@ open                 閲覧
 format               整形
 lint                 検証
 test                 試験
-doc                  文書
 submit               投稿
 clean                掃除
 prune                破滅

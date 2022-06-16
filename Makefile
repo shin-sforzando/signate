@@ -7,15 +7,16 @@ OS_NAME := $(shell uname -s)
 PYTHON_COMMAND := python3
 
 OPTS :=
-.PHONY: default setup init-% hide reveal prune help
+.PHONY: default setup list init-% hide reveal prune help
 
 default: setup ## 常用
 
-setup: reveal install ; ## 初回
-	brew install git-cliff
+setup: reveal ## 初回
+ifeq ($(OS_NAME),Darwin)
 	brew install git-secret
 	brew install direnv
 	brew install lefthook
+endif
 	mkdir -p ~/.signate
 	cp signate.json ~/.signate/signate.json
 	$(PYTHON_COMMAND) -m venv venv
@@ -24,6 +25,9 @@ setup: reveal install ; ## 初回
 	)
 	direnv allow
 	if [ $(OS_NAME) = "Darwin" ]; then say "The setup process is complete." ; fi
+
+list: ## 一覧
+	signate list
 
 join-%: ## 挑戦
 	@echo "Initializing Competition ID: ${@:join-%=%} ..."

@@ -13,6 +13,3 @@ pytest-cov
 pytest-datadir
 pytest-mock
 pytest-xdist[psutil]
-# for doc
-sphinx
-sphinx-rtd-theme

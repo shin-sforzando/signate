@@ -18,6 +18,7 @@ Source codes for [SIGNATE](https://signate.jp).
 - [How to](#how-to)
   - [Setup](#setup)
   - [Competitions](#competitions)
+    - [List](#list)
     - [Join](#join)
     - [Initialize](#initialize)
     - [Start](#start)
@@ -42,6 +43,7 @@ Source codes for [SIGNATE](https://signate.jp).
 $ make help
 default              常用
 setup                初回
+list                 一覧
 join-%               挑戦
 hide                 秘匿
 reveal               暴露
@@ -58,6 +60,10 @@ make setup
 To get `signate.json`, access [Account Settings](https://signate.jp/account_settings).
 
 ### Competitions
+
+#### List
+
+To check the list of competitions, use `make list`.
 
 #### Join
 
