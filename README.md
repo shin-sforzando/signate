@@ -1,7 +1,6 @@
 # signate
 
 <!-- Badges -->
-[![push](https://github.com/shin-sforzando/signate/actions/workflows/push.yml/badge.svg)](https://github.com/shin-sforzando/signate/actions/workflows/push.yml)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -24,8 +23,6 @@ Source codes for [SIGNATE](https://signate.jp).
     - [Start](#start)
     - [Format](#format)
     - [Lint](#lint)
-    - [Test](#test)
-    - [Document](#document)
     - [Submit](#submit)
 - [Misc](#misc)
 - [Notes](#notes)
@@ -77,45 +74,25 @@ Then change to the directory of the competition.
 
 #### Initialize
 
-```shell
-make init
-```
+To initialize for each competition, `make init` after moving to that directory.
 
 #### Start
 
 ```shell
-make start
+(T. B. D.)
 ```
 
 #### Format
 
-```shell
-make format
-```
+To format the source code, use `make format`.
 
 #### Lint
 
-```shell
-make lint
-```
-
-#### Test
-
-```shell
-make test
-```
-
-#### Document
-
-```shell
-make doc
-```
+To lint the source code, use `make lint`.
 
 #### Submit
 
-```shell
-make submit
-```
+To submit the result, use `make submit`.
 
 ## Misc
 

@@ -11,6 +11,7 @@ MAIN_CONTAINER_APP :=
 MAIN_CONTAINER_SHELL := bash
 OPEN_TARGET :=
 
+COMPETITION_ID := 102
 OPTS :=
 .DEFAULT_GOAL := default
 .PHONY: default init download hide reveal start open format lint test submit clean prune help
@@ -55,7 +56,7 @@ test: ## 試験
 
 submit: ## 投稿
 	echo "TODO: Not Implemented Yet!"
-	# signate submit -competition-id=102 data/submit.tsv --note="blah blah blah"
+	# signate submit -competition-id=$(COMPETITION_ID) data/submit.tsv --note="blah blah blah"
 	if [ $(OS_NAME) = "Darwin" ]; then say "The submit process is complete." ; fi
 
 clean: ## 掃除
