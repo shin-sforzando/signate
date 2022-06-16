@@ -1,6 +1,7 @@
 black
 flake8
-loguru
-python-dotenv
+mlflow
+pytorch-lightning
 signate
-tqdm
+torch
+torchvision

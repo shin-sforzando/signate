@@ -1,7 +1,0 @@
-### Project-specific ###
-# data
-**/data/*.[ct]sv
-# logs
-**/log/*.log
-# results
-**/log/*

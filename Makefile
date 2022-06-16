@@ -21,7 +21,8 @@ endif
 	cp signate.json ~/.signate/signate.json
 	$(PYTHON_COMMAND) -m venv venv
 	( venv/bin/activate; \
-		pip install -r requirements.txt; \
+		pip install --upgrade pip ; \
+		pip install --upgrade -r requirements.txt; \
 	)
 	direnv allow
 	if [ $(OS_NAME) = "Darwin" ]; then say "The setup process is complete." ; fi
